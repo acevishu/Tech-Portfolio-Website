@@ -1,7 +1,7 @@
 "use client";
 
 import { FormEvent, KeyboardEvent, useRef, useState } from "react";
-import { terminalResponses } from "@/lib/data";
+import { interactiveTerminal } from "@/data/terminal";
 
 type LogEntry = {
   type: "input" | "output";
@@ -9,7 +9,7 @@ type LogEntry = {
 };
 
 const initialLog: LogEntry[] = [
-  { type: "output", text: "Vishal Rao cloud console. Type help to list commands." }
+  { type: "output", text: interactiveTerminal.initialLog }
 ];
 
 export function InteractiveTerminal() {
@@ -27,9 +27,9 @@ export function InteractiveTerminal() {
       return;
     }
 
-    const response = terminalResponses[normalized] ?? [
-      `Command not found: ${normalized}`,
-      "Try help, about, skills, experience, projects, contact, or clear."
+    const response = interactiveTerminal.responses[normalized] ?? [
+      `${interactiveTerminal.unknownCommandPrefix} ${normalized}`,
+      interactiveTerminal.unknownCommandHelp
     ];
 
     setLog((entries) => [
@@ -58,7 +58,7 @@ export function InteractiveTerminal() {
         className="terminal-edge circuit-panel rounded-md"
         onClick={() => inputRef.current?.focus()}
         role="application"
-        aria-label="Interactive portfolio terminal"
+        aria-label={interactiveTerminal.ariaLabel}
       >
         <div className="flex items-center justify-between border-b border-cyan/15 px-4 py-3 font-mono text-xs text-muted">
           <div className="flex gap-2" aria-hidden="true">
@@ -66,8 +66,8 @@ export function InteractiveTerminal() {
             <span className="h-2.5 w-2.5 rounded-full bg-yellow-300/80" />
             <span className="h-2.5 w-2.5 rounded-full bg-neon/80" />
           </div>
-          <span>console.drawer</span>
-          <span className="text-cyan">AUTH: READ_ONLY</span>
+          <span>{interactiveTerminal.title}</span>
+          <span className="text-cyan">{interactiveTerminal.auth}</span>
         </div>
         <div className="max-h-96 overflow-y-auto p-5 font-mono text-sm leading-7">
           {log.map((entry, index) => (
@@ -77,7 +77,7 @@ export function InteractiveTerminal() {
           ))}
           <form onSubmit={handleSubmit} className="mt-2 flex items-center gap-2">
             <label htmlFor="terminal-command" className="text-cyan">
-              &gt;
+              {interactiveTerminal.prompt}
             </label>
             <input
               ref={inputRef}
@@ -86,7 +86,7 @@ export function InteractiveTerminal() {
               onChange={(event) => setCommand(event.target.value)}
               onKeyDown={handleKeyDown}
               className="w-full bg-transparent text-neon outline-none placeholder:text-muted/60"
-              placeholder="help"
+              placeholder={interactiveTerminal.placeholder}
               autoComplete="off"
               spellCheck={false}
             />
