@@ -1,6 +1,7 @@
 import type { NextConfig } from "next";
 
 const repo = "Tech-Portfolio-Website";
+const isGithubPages = process.env.GITHUB_ACTIONS === "true";
 
 const nextConfig: NextConfig = {
   reactStrictMode: true,
@@ -8,8 +9,8 @@ const nextConfig: NextConfig = {
   images: {
     unoptimized: true,
   },
-  basePath: process.env.NODE_ENV === "production" ? `/${repo}` : "",
-  assetPrefix: process.env.NODE_ENV === "production" ? `/${repo}/` : "",
+  basePath: isGithubPages ? `/${repo}` : "",
+  assetPrefix: isGithubPages ? `/${repo}/` : "",
 };
 
 export default nextConfig;
