@@ -99,7 +99,8 @@ export default function Home() {
                 Contact Me <Mail size={16} aria-hidden="true" />
               </a>
               <a
-                href="/resume-vishal-rao.pdf"
+                href="/Vishal_Rao_devops.pdf"
+                download
                 className="inline-flex items-center gap-2 border border-white/15 px-5 py-3 text-sm font-semibold text-white transition hover:border-neon/60 hover:text-neon"
               >
                 Download Resume <ArrowDownToLine size={16} aria-hidden="true" />
@@ -308,13 +309,13 @@ export default function Home() {
               );
             })}
             <div className="flex gap-3 pt-2">
-              <a href="https://www.linkedin.com/in/vishal-rao" aria-label="LinkedIn" className="border border-cyan/25 p-3 text-cyan transition hover:bg-cyan/10">
+              <a href="https://www.linkedin.com/in/vishurao06" aria-label="LinkedIn" className="border border-cyan/25 p-3 text-cyan transition hover:bg-cyan/10">
                 <Linkedin size={20} />
               </a>
-              <a href="https://github.com/vishal-rao" aria-label="GitHub" className="border border-cyan/25 p-3 text-cyan transition hover:bg-cyan/10">
+              <a href="https://github.com/acevishu" aria-label="GitHub" className="border border-cyan/25 p-3 text-cyan transition hover:bg-cyan/10">
                 <Github size={20} />
               </a>
-              <a href="mailto:vishal.rao@example.com" aria-label="Email" className="border border-cyan/25 p-3 text-cyan transition hover:bg-cyan/10">
+              <a href="mailto:ecavishu@gmail.com" aria-label="Email" className="border border-cyan/25 p-3 text-cyan transition hover:bg-cyan/10">
                 <Mail size={20} />
               </a>
             </div>

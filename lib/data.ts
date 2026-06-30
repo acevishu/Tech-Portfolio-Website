@@ -221,11 +221,15 @@ export const terminalResponses: Record<string, string[]> = {
   projects: [
     "Case studies: landing zone, hybrid networking, Terraform automation, AKS workloads, monitoring/recovery, Linux automation."
   ],
-  contact: ["Email: vishal.rao@example.com", "LinkedIn and GitHub links are ready to connect once final URLs are added."]
+  contact: [
+    "Email: ecavishu@gmail.com",
+    "LinkedIn: linkedin.com/in/vishurao06",
+    "GitHub: github.com/acevishu"
+  ]
 };
 
 export const contactLinks = [
-  { label: "Email", value: "vishal.rao@example.com", href: "mailto:vishal.rao@example.com", icon: Activity },
-  { label: "LinkedIn", value: "linkedin.com/in/vishal-rao", href: "https://www.linkedin.com/in/vishal-rao", icon: BrainCircuit },
-  { label: "GitHub", value: "github.com/vishal-rao", href: "https://github.com/vishal-rao", icon: Code2 }
+  { label: "Email", value: "ecavishu@gmail.com", href: "mailto:ecavishu@gmail.com", icon: Activity },
+  { label: "LinkedIn", value: "linkedin.com/in/vishurao06", href: "https://www.linkedin.com/in/vishurao06", icon: BrainCircuit },
+  { label: "GitHub", value: "github.com/acevishu", href: "https://github.com/acevishu", icon: Code2 }
 ];
